@@ -1,19 +1,28 @@
-var images = ['juan.jpeg', 'toby.jpeg', 'bob.jpeg', 'jenna.jpeg', 'melissa.jpeg', 'jempa.jpeg', 'emma.jpeg', 'emily.jpeg', 'edward.jpeg', 'john.jpeg', 'Courtney.jpeg', 'arun.jpeg', 'william.jpeg', 'venessa.jpeg', 'danielle.jpeg', 'jeff.jpeg', 'susan.jpeg', 'samuel.jpeg', 'bill.jpeg', 'harris.jpeg', 'sarah.jpeg'];
+var commonProblems = [
+    'Data issue related to specific employee',
+    'Data issue related to specific site',
+    'Data issue caused by bad conversion data',
+    'Automation setup issue',
+    'Bug caused by bad code',
+    'Bug caused by bad specification',
+    'User misunderstanding how the software works',
+    'Site is being accessed during an update or server restart',
+    'Display issue on specific screen sizes',
+    'Timeout due to large amounts of data',
+    'Not even a bug/issue, just a straight up enhancement request',
+    'User is using old version that doesn\'t contain the fix',
+    'Site doesn\'t have the right license file options enabled',
+    'Timezone or time of day related bug'];
 
 var cards = document.querySelector('.cards');
-var yourCard = document.querySelector('.yourCard');
 
-images.forEach((img) => {
+commonProblems.forEach((img) => {
     var person = document.createElement('div')
-    person.innerHTML = `<img src="./assets/imgs/people/${img}"></img><br><h2>${img.split('.')[0]}</h2>`;
+    person.innerHTML = `${img}`;
     person.classList.add('card');
     cards.appendChild(person);
 });
 
-var randomNumber = Math.floor(Math.random() * 21);
-var personToGuess = document.createElement('div');
-personToGuess.innerHTML = `<img src="./assets/imgs/people/${images[randomNumber]}"></img><br><h1>${images[randomNumber].split('.')[0]}</h1>`;
-yourCard.appendChild(personToGuess)
 var people = document.querySelectorAll('.card');
 
 document.querySelectorAll('.card').forEach((element) => {
@@ -24,7 +33,8 @@ document.querySelectorAll('.card').forEach((element) => {
         element.classList.remove('hover')
     }
     element.onclick = function () {
-        element.style.transition = 'all 0s'
-        element.style.visibility = 'hidden'
+        element.style.transition = 'visibility 0s 0.7s, opacity 0.7s linear';
+        element.style.opacity = 0;
+        element.style.visibility = 'hidden';
     }
 })

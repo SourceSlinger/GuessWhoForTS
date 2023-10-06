@@ -8,16 +8,12 @@ body {
 }
 
 .cards {
-    width: 70%;
+    width: 90%;
     position: absolute;
     top: 50%;
     float: left;
     transform: translateY(-50%);
     margin-left: 2.5%;
-}
-
-.card h2 {
-    font-size: 1em;
 }
 
 .card {
@@ -28,7 +24,29 @@ body {
     padding: 1%;
     text-align: center;
     transition: ease-in-out 0.7s;
+    height: 6em;
 }
+
+
+@media (max-width: 1300px) {
+    .card {
+        width: 16%;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .card {
+        width: 19%;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 29%;
+    }
+}
+
 
 .cards img {
     width: 100%;
@@ -39,19 +57,4 @@ body {
     color: white;
     cursor: pointer;
     transition: ease-in-out 0.7s;
-}
-
-.yourCard {
-    width: 20%;
-    position: absolute;
-    right: 5%;
-    text-align: center;
-    background-color: rgb(228, 228, 228);
-    padding: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.yourCard img {
-    width: 100%;
 }
